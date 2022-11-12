@@ -7,20 +7,10 @@ import plotly.express as px
 import pandas as pd
 import plotly.io as pio
 
-from src.utils import Columns, create_scatter_plot, create_histogram
+from src.utils import Columns, create_scatter_plot, create_histogram, create_simple_grid
 from src.data_file import df
 
 pio.renderers.default = 'browser'
-
-
-def create_simple_grid(
-        input_list: list,
-        number_of_columns_in_row: int
-):
-    return dmc.SimpleGrid(
-        cols=number_of_columns_in_row,
-        children=input_list
-    )
 
 
 def create_list_with_simple_scatter_plots():
@@ -31,7 +21,7 @@ def create_list_with_simple_scatter_plots():
 
     for x in numerical_columns:
         for y in numerical_columns:
-            if x == y:
+            if x == y or x == 'ID' or y == 'ID':
                 continue
             list_with_scatter_charts.append(
                 dcc.Graph(
@@ -49,6 +39,9 @@ def create_list_with_histograms():
     list_with_histograms = []
 
     for ii in numerical_columns:
+        if ii == 'ID':
+            continue
+
         list_with_histograms.append(
             dcc.Graph(
                 figure=create_histogram(
@@ -70,6 +63,9 @@ def create_list_with_histograms_color():
 
     for x in numerical_columns:
         for y in categorical_columns:
+            if x == 'ID' or y == 'ID' or x == y:
+                continue
+
             list_with_histograms_color.append(
                 dcc.Graph(
                     figure=create_histogram(

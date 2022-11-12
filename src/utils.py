@@ -1,6 +1,7 @@
 from dataclasses import dataclass, fields
 import pandas as pd
 import plotly.express as px
+import dash_mantine_components as dmc
 
 
 @dataclass
@@ -98,9 +99,22 @@ def create_histogram(
     return fig
 
 
-def create_bar_chart():
+def create_bar_chart(
+        df_: pd.DataFrame,
+        x_variable: str
+):
+    df_grouped = df_.groupby(x_variable, as_index=False).count()[[x_variable, 'ID']]
+    # df_grouped = df_grouped.sort_values(by='ID')
 
-    return ''
+    # Change x-axis variable to str so that we can plot it in specific order
+    # Necessary when sorting DataFrame
+    df_grouped = df_grouped.astype(dtype={x_variable: str})
+
+    df_grouped.rename(columns={'ID': 'Number of passengers'}, inplace=True)
+
+    fig = px.bar(df_grouped, x=x_variable, y="Number of passengers", template='simple_white')
+
+    return fig
 
 
 def create_scatter_plot(
@@ -115,9 +129,28 @@ def create_scatter_plot(
         template='simple_white'
     )
 
+    # https://plotly.com/python/marker-style/#opacity
+    # https://chart-studio.plotly.com/~alex/455/four-ways-to-change-opacity-of-scatter-markers.embed
+    fig.update_traces(marker=dict(
+            # color='LightSkyBlue',
+            # size=80,
+            opacity=0.5,
+            # line=dict(
+            #     color='MediumPurple',
+            #     width=8
+            # )
+        ), opacity=0.5)
+
     return fig
 
 
-
+def create_simple_grid(
+        input_list: list,
+        number_of_columns_in_row: int
+):
+    return dmc.SimpleGrid(
+        cols=number_of_columns_in_row,
+        children=input_list
+    )
 
 

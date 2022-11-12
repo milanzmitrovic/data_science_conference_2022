@@ -9,6 +9,31 @@ from src.utils import IDs, create_histogram
 
 
 def bar_chart_with_varying_bin_size():
+    # This way of writing code does not work within Dash.Tabs
+    # Report bug!!!
+    @callback(
+        Output(
+            component_id=IDs.bar_chart_with_varying_bin_size,
+            component_property='figure'
+        ),
+
+        Input(
+            component_id=IDs.bar_chart_with_varying_bin_size_slider,
+            component_property='value'
+        )
+    )
+    def callback_update_bin_size(bin_size):
+        data = np.random.normal(loc=0, scale=30, size=10000)
+
+        dff = pd.DataFrame({'random_data': data})
+
+        fig = create_histogram(
+            df_=dff,
+            numerical_column='random_data',
+            number_of_bins=int(bin_size)
+        )
+
+        return fig
 
     return dmc.Container([
         dmc.Space(h=30),
@@ -24,36 +49,11 @@ def bar_chart_with_varying_bin_size():
     ])
 
 
-# This way of writing code does not work within Dash.Tabs
-# Report bug!!!
-@callback(
-    Output(
-        component_id=IDs.bar_chart_with_varying_bin_size,
-        component_property='figure'
-    ),
-
-    Input(
-        component_id=IDs.bar_chart_with_varying_bin_size_slider,
-        component_property='value'
-    )
-)
-def callback_update_bin_size(bin_size):
-
-    data = np.random.normal(loc=0, scale=30, size=10000)
-
-    dff = pd.DataFrame({'random_data': data})
-
-    fig = create_histogram(
-        df_=dff,
-        numerical_column='random_data',
-        number_of_bins=int(bin_size)
-    )
-
-    return fig
-
-
 def layout():
     return bar_chart_with_varying_bin_size()
+
+
+layout()
 
 
 dash.register_page(__name__)

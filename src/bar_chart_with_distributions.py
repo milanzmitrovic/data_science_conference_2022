@@ -9,28 +9,6 @@ pio.renderers.default = 'browser'
 
 
 def bar_chart_with_distributions():
-    # @callback(
-    #     Output(
-    #         component_id=IDs.bar_chart_with_distributions_graph,
-    #         component_property='figure'
-    #     ),
-    #
-    #     Input(
-    #         component_id=IDs.bar_chart_with_distributions,
-    #         component_property='value'
-    #     )
-    # )
-    # def update_distribution_graph(input_):
-    #     data = eval(input_)
-    #
-    #     dff = pd.DataFrame({'distribution_data': data})
-    #
-    #     fig = create_histogram(
-    #         df_=dff,
-    #         numerical_column='distribution_data'
-    #     )
-    #
-    #     return fig
 
     return dmc.Container([
 

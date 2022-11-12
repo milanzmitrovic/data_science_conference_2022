@@ -10,9 +10,7 @@ from src.navigation_drawer import nav_drawer
 
 app = Dash(
     __name__,
-    use_pages=True,
-    # pages_folder='../pages'
-    # external_stylesheets=[dbc.themes.BOOTSTRAP]
+    use_pages=True
 )
 
 app.layout = html.Div([
@@ -22,6 +20,7 @@ app.layout = html.Div([
 
     dash.page_container
 ])
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
