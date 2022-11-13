@@ -7,8 +7,7 @@ def create_content():
 
     return [
         html.Hr(),
-        html.Br(),
-        html.Br(),
+
         dcc.Link('Home Page', href='/'),
         dmc.Space(h=20),
         dcc.Link('About Us', href='/about-us'),
@@ -66,7 +65,7 @@ def nav_drawer():
                 children=create_content()
             ),
 
-        ]
+        ], style={'overflow-y': 'scroll'}
     )
 
 
