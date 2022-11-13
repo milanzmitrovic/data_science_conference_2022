@@ -22,3 +22,4 @@ flight_distance__returning_customers = df_sampled.query("`Customer Type` == 'Ret
 st.ttest_ind(a=flight_distance__first_time_customers, b=flight_distance__returning_customers)
 
 
+

@@ -14,7 +14,7 @@ app = Dash(
 )
 
 app.layout = html.Div([
-    html.H1('Welcome to workshop - Statistics with Python!'),
+    html.H1('Introduction to Statistical Methods with Examples in Python!'),
 
     nav_drawer(),
 

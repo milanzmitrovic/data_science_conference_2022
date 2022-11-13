@@ -14,11 +14,11 @@ from src.data_file import df
 pio.renderers.default = 'browser'
 
 
-def create_sample_data_table():
+def create_sample_data_table(df_: pd.DataFrame):
 
     return dmc.Container(
         dash_table.DataTable(
-            data=df.sample(n=100).to_dict('records'),
+            data=df_.sample(n=100).to_dict('records'),
             columns=[{"name": i, "id": i} for i in df.columns],
             page_size=30
         ),
@@ -29,8 +29,7 @@ def create_sample_data_table():
 def layout():
     return html.Div([
         dmc.Space(h=40),
-        create_sample_data_table()
-
+        create_sample_data_table(df_=df)
         ])
 
 

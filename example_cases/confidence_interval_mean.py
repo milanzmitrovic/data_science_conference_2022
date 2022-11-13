@@ -5,8 +5,8 @@ import scipy.stats as st
 import pandas as pd
 
 
-# df = pd.read_csv('../data/airline_passenger_satisfaction.csv')
-df = pd.read_csv('data/airline_passenger_satisfaction.csv')
+df = pd.read_csv('../data/airline_passenger_satisfaction.csv')
+# df = pd.read_csv('data/airline_passenger_satisfaction.csv')
 
 flight_distance = df['Flight Distance']
 
@@ -35,14 +35,17 @@ flight_distance_sample_100 = flight_distance.sample(n=n)
 x = flight_distance_sample_100.mean()
 s = flight_distance_sample_100.std()
 sem = st.sem(flight_distance_sample_20)
+level_of_significance = 0.95
 
-st.norm.interval(
-    alpha=0.95,
+
+interval = st.norm.interval(
+    alpha=level_of_significance,
     loc=x,
     scale=sem
 )
 
 
 if __name__ == '__main__':
-    pass
+    print(f"Confidence interval {interval}")
+
 
