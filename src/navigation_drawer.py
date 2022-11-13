@@ -48,6 +48,9 @@ def create_content():
         dmc.Space(h=20),
 
         dcc.Link('Ivana 6', href='/hipothesis-testing-proportion-one-sample'),
+        dmc.Space(h=20),
+
+        dcc.Link('Ivana 7', href='/interactive-confidence-interval'),
         dmc.Space(h=20)
     ]
 
