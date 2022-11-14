@@ -66,14 +66,15 @@ distributions = {
 
     'Uniform': 'st.uniform.rvs(size=1000, loc=10, scale=20)',
     'Normal': 'st.norm.rvs(size=1000, loc=0, scale=1)',
-    'T distribution': 'st.t.rvs(size=1000, loc=0, scale=1, df=99)',
-    'Gamma': 'st.gamma.rvs(a=5, size=1000)',
+    'T distribution': 'st.t.rvs(size=1000, loc=0, scale=1, df=10)',
+    'Gamma': 'st.gamma.rvs(a=2, size=1000)',
     'Exponential': 'st.expon.rvs(scale=1, loc=0, size=1000)',
     'Poisson': 'st.poisson.rvs(mu=3, size=1000)',
     'Binomial': 'st.binom.rvs(n=10, p=0.8, size=1000)',
     'Bernoulli': 'st.bernoulli.rvs(size=1000, p=0.6)',
     'Log-normal': 'st.lognorm.rvs(size=1000, loc=0, scale=1, s=22)',
-    'Beta': 'st.beta.rvs(size=1000, a=33, b=33)'
+    'Beta': 'st.beta.rvs(size=1000, a=5, b=1)',
+    'Chi2': 'st.chi.rvs(70, size=1000)'
 
 }
 

@@ -18,18 +18,19 @@ def create_content():
         dmc.Space(h=20),
 
         html.H3('Part II - Measures of Central Tendency and Dispersion'),
+        html.Li(dcc.Link('Show Dataset Sample', href='/data-sample')),
+        html.Li(dcc.Link('Exploratory Data Analysis', href='/exploratory-data-analysis')),
+        html.Li(dcc.Link('Categorical Variables', href='/categorical-variables-bar-charts')),
+        html.Li(dcc.Link('Bin Sizes', href='/bin-sizes')),
+
         html.Li(dcc.Link('Intro to statistical metrics',
                          href='/part2-measure-of-central-tendency-and-dispersion')),
         dmc.Space(h=20),
 
         html.H3('Part III – Various Distributions and Central Limit Theorem '),
-        html.Li(dcc.Link('Show Dataset Sample', href='/data-sample')),
-        html.Li(dcc.Link('Exploratory Data Analysis', href='/exploratory-data-analysis')),
-        html.Li(dcc.Link('Central Limit Theorem', href='/central-limit-theorem')),
-        html.Li(dcc.Link('Distributions', href='/distributions')),
         html.Li(dcc.Link('Interactive Distributions', href='/interactive-distributions')),
-        html.Li(dcc.Link('Categorical Variables', href='/categorical-variables-bar-charts')),
-        html.Li(dcc.Link('Bin Sizes', href='/bin-sizes')),
+        html.Li(dcc.Link('Distributions', href='/distributions')),
+        html.Li(dcc.Link('Central Limit Theorem', href='/central-limit-theorem')),
         dmc.Space(h=20),
 
         html.H3('Part IV - Inferential Statistics: Interval Estimation and Hypothesis Testing'),
