@@ -12,6 +12,8 @@ pio.renderers.default = 'browser'
 
 df = df[[Columns.NumericalVariables.departure_delay, Columns.NumericalVariables.arrival_delay]].dropna()
 
+df.corr()
+
 df_sample = df.sample(n=10000)
 
 X = df_sample[Columns.NumericalVariables.arrival_delay].values
@@ -22,7 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 reg = LinearRegression()
 
-X_train = X_train.reshape(-1,1)
+X_train = X_train.reshape(-1, 1)
 y_train = y_train.reshape(-1, 1)
 
 X_test = X_test.reshape(-1, 1)
@@ -58,5 +60,7 @@ llr = sm.Logit(np.random.randint(0,2, 6700), X_train).fit()
 
 llr.summary()
 
+
+# ------- # ------- # ------- # ------- #
 
 

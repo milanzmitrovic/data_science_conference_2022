@@ -35,30 +35,48 @@ def create_sample_data_table(df_: pd.DataFrame):
 
 
 def layout():
-    return html.Div([
-        dmc.Space(h=40),
-        create_sample_data_table(df_=dff_),
+    return dmc.Container([
 
-        dmc.Space(h=40),
+        html.H1('Part II - Measures of Central Tendency and Dispersion'),
+
+        html.H2('Measures of Central Tendency'),
+        html.Li(html.H3('Mean')),
+        html.Li(html.H3('Formula sutra ti saljem')),
+        html.Li(html.H3('Median')),
+        html.Li(html.H3('Mode')),
+        html.Li(html.H3('Primer sutra ti saljem')),
+
+        html.H2('Measures of Dispersion'),
+        html.Li(html.H3('Why do we calculate measures of dispersion?')),
+        html.Li(html.H3('Variance')),
+        html.Li(html.H3('Formula sutra ti saljem')),
+        html.Li(html.H3('Standard deviation')),
+
 
         dcc.Markdown("""
-        
+
             ```python
-            
+    
             import pandas as pd
-            
+    
             df = pd.read_csv('path_to_csv_file')
-
+    
             numerical_columns = [field.default for field in fields(Columns.NumericalVariables)]
-
+    
             numerical_columns.remove('ID')
-
+    
             dff = df[numerical_columns]
-
+    
             dff_ = dff.agg(func=['mean', 'std', 'median'])
-
+    
             ```
-        """)
+                """),
+
+        create_sample_data_table(df_=dff_),
+
+        html.Li(html.H3('Interpretacija sutra ti saljem')),
+
+        dmc.Space(h=40),
 
         ])
 

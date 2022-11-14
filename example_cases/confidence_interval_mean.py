@@ -3,9 +3,10 @@
 
 import scipy.stats as st
 import pandas as pd
+from src.data_file import df
 
 
-df = pd.read_csv('../data/airline_passenger_satisfaction.csv')
+# df = pd.read_csv('../data/airline_passenger_satisfaction.csv')
 # df = pd.read_csv('data/airline_passenger_satisfaction.csv')
 
 flight_distance = df['Flight Distance']

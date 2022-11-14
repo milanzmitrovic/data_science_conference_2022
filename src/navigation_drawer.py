@@ -4,7 +4,6 @@ import dash
 
 
 def create_content():
-
     return [
         html.Hr(),
 
@@ -12,45 +11,38 @@ def create_content():
         dmc.Space(h=20),
         dcc.Link('About Us', href='/about-us'),
         dmc.Space(h=20),
-        dcc.Link('Intro', href='/intro'),
+
+        html.H3('Part I - Intro to Statistics'),
+        dcc.Link('Intro to Statistics',
+                 href='/part1-intro-to-statistics'),
         dmc.Space(h=20),
-        dcc.Link('Exploratory Data Analysis', href='/exploratory-data-analysis'),
+
+        html.H3('Part II - Measures of Central Tendency and Dispersion'),
+        html.Li(dcc.Link('Intro to statistical metrics',
+                         href='/part2-measure-of-central-tendency-and-dispersion')),
         dmc.Space(h=20),
-        dcc.Link('Show Dataset Sample', href='/data-sample'),
+
+        html.H3('Part III – Various Distributions and Central Limit Theorem '),
+        html.Li(dcc.Link('Show Dataset Sample', href='/data-sample')),
+        html.Li(dcc.Link('Exploratory Data Analysis', href='/exploratory-data-analysis')),
+        html.Li(dcc.Link('Central Limit Theorem', href='/central-limit-theorem')),
+        html.Li(dcc.Link('Distributions', href='/distributions')),
+        html.Li(dcc.Link('Interactive Distributions', href='/interactive-distributions')),
+        html.Li(dcc.Link('Categorical Variables', href='/categorical-variables-bar-charts')),
+        html.Li(dcc.Link('Bin Sizes', href='/bin-sizes')),
         dmc.Space(h=20),
-        dcc.Link('Categorical Variables', href='/categorical-variables-bar-charts'),
-        dmc.Space(h=20),
-        dcc.Link('Interactive Distributions', href='/interactive-distributions'),
-        dmc.Space(h=20),
-        dcc.Link('Central Limit Theorem', href='/central-limit-theorem'),
-        dmc.Space(h=20),
-        dcc.Link('Bin Sizes', href='/bin-sizes'),
-        dmc.Space(h=20),
-        dcc.Link('Distributions', href='/distributions'),
-        dmc.Space(h=20),
+
+        html.H3('Part IV - Inferential Statistics: Interval Estimation and Hypothesis Testing'),
+        html.Li(dcc.Link('Interval estimation', href='/part4-interval-estimation')),
+        html.Li(dcc.Link('Interval estimation eg. 1', href='/part4-interval-estimation-eg1')),
+        html.Li(dcc.Link('Interval Estimation eg. 2.', href='/part4-interval-estimation-eg2')),
+        html.Li(dcc.Link('Width of a confidence interval', href='/part4-interval-estimation-eg3')),
+        html.Li(dcc.Link('Hypothesis Testing', href='/part4-hipothesys-testing')),
+        html.Li(dcc.Link('Hypothesis Testing eg 1.', href='/part4-interval-estimation-eg4')),
+        html.Li(dcc.Link('Hypothesis Testing eg 2.', href='/part4-interval-estimation-eg5')),
+
         dcc.Link('Conclusions', href='/conclusions'),
         dmc.Space(h=20),
-
-        dcc.Link('Ivana 1', href='/mean-variance-stdev-mode-median'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 2', href='/confidence-interval-mean'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 3', href='/confidence-interval-proportion'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 4', href='/hipothesis-testing-mean-differences-two-samples'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 5', href='/hipothesis-testing-mean-one-sample'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 6', href='/hipothesis-testing-proportion-one-sample'),
-        dmc.Space(h=20),
-
-        dcc.Link('Ivana 7', href='/interactive-confidence-interval'),
-        dmc.Space(h=20)
     ]
 
 
