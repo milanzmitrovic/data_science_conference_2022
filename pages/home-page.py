@@ -7,6 +7,8 @@ import dash_mantine_components as dmc
 def layout():
     return dmc.Container([
 
+        dmc.Space(h=60),
+
         dmc.SimpleGrid([
 
             html.Img(
@@ -38,6 +40,12 @@ def layout():
 
             )
         ], cols=1),
+
+        dmc.Space(h=40),
+
+        html.H1("""
+        The views and opinions expressed in this workshop are those of the speakers and do not necessarily reflect the views or positions of any entity they represent.
+        """),
 
         dmc.Space(h=60),
 
