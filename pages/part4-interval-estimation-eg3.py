@@ -36,6 +36,8 @@ def layout():
         html.Li(html.H4('Lower the confidence level')),
         html.Li(html.H4('Increase the sample size')),
 
+        dmc.Space(h=60)
+
 
     ])
 

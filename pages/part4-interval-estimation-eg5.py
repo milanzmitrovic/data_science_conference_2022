@@ -61,7 +61,7 @@ def layout():
         html.Li(html.H3(f"{proportion_results}")),
 
         html.Li(html.H3(
-            'Because significance level of the test is less than the p-value, we fail to reject the null hypothesis at this significance level. We conclude that the proportion of passengers who travel on business is not different from 50%.')),
+            'Because significance level of the test is less than the p-value, we reject the null hypothesis at this significance level. We conclude that the proportion of passengers who travel on business is different from 50%.')),
 
         dmc.Space(h=60)
 

@@ -72,7 +72,9 @@ def layout():
         html.Li(html.H3(f"Confidence interval large sample: {(1034.353, 1446.966)}")),
         html.Li(html.H3(
             'We are 95% confident that the average flight distance is between 1034.353 and 1446.966 kilometers.'
-        ))
+        )),
+
+        dmc.Space(h=60)
 
     ])
 

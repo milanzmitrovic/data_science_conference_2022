@@ -41,6 +41,19 @@ def layout():
             )
         ], cols=1),
 
+        dmc.Space(h=20),
+
+        html.H2('DataHangout meetup group from Belgrade:'),
+
+        dmc.SimpleGrid([
+
+            html.Img(
+                src='assets/data_hangout.jpeg',
+                style={'height': '450px', 'width': '800px'}
+
+            )
+        ], cols=1),
+
         dmc.Space(h=40),
 
         html.H1("""
