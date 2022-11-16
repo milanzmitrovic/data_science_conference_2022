@@ -43,8 +43,9 @@ def create_content():
         html.Li(dcc.Link('Hypothesis Testing eg 2.', href='/part4-interval-estimation-eg5')),
 
         dmc.Space(h=20),
-        dcc.Link('Conclusions', href='/conclusions'),
-        dmc.Space(h=20),
+
+        html.H3(dcc.Link('Conclusions', href='/conclusions')),
+        dmc.Space(h=60),
     ]
 
 
@@ -56,10 +57,10 @@ def nav_drawer():
                 title="Table of Content",
                 id="drawer",
                 padding="md",
-                children=create_content()
+                children=create_content(), class_name='scroll'
             ),
 
-        ], style={'overflow-y': 'scroll'}
+        ]
     )
 
 
