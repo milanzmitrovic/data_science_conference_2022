@@ -56,3 +56,6 @@ interesting_df = dff[[
 interesting_df['satisfied'] / interesting_df['dis_satisfied']
 
 
+import pandas as pd
+
+pd.read_table('data/rrr.tsv')

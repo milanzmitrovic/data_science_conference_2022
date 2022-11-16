@@ -28,7 +28,9 @@ def layout():
             'Is the average age of passengers different from 42 years (significance level of the test is 5%)?')),
         html.Li(html.H3('Null hypothesis: The average age of passengers is not different from 42 years.')),
         html.Li(html.H3('Alternative hypothesis: The average age of passengers is different from 42 years.')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+
+        html.Img(src='https://miro.medium.com/max/906/1*PXvQrxR_5dr84Up6zLICJg.png'),
+
         dcc.Markdown("""
 
         ```python
@@ -56,7 +58,9 @@ def layout():
     """),
         html.Li(html.H3(f"{test_result}")),
         html.Li(html.H3(
-            'Interpratacija: Because significance level of the test is greater than the p-value, we reject the null hypothesis at this significance level. We conclude that the average age of passengers is different from 42 years.')),
+            'Because significance level of the test is greater than the p-value, we reject the null hypothesis at this significance level. We conclude that the average age of passengers is different from 42 years.')),
+
+        dmc.Space(h=60)
 
     ])
 

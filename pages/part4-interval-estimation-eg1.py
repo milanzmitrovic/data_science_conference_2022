@@ -9,12 +9,12 @@ import dash
 
 flight_distance = df['Flight Distance']
 
-n = 1000
-flight_distance_sample_100 = flight_distance.sample(n=n)
-x = flight_distance_sample_100.mean()
-s = flight_distance_sample_100.std()
-sem = st.sem(flight_distance_sample_100)
-alpha = 0.05
+n = 100
+flight_distance_sample = flight_distance.sample(n=n)
+x = flight_distance_sample.mean()
+s = flight_distance_sample.std()
+sem = st.sem(flight_distance_sample)
+alpha = 0.95
 
 interval_large_sample = st.norm.interval(
     alpha=alpha,
@@ -28,7 +28,8 @@ def layout():
 
         html.H2('Interval Estimation Example 1.'),
         html.Li(html.H3('Construct a 95% confidence interval for the average flight distance.')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+
+        html.Img(src='assets/ie1.png', style={'height': '450px', 'width': '800px'}),
 
         dcc.Markdown("""
 
@@ -51,10 +52,10 @@ def layout():
 
             # Case B - large sample (>30)
             n = 1000
-            flight_distance_sample_100 = flight_distance.sample(n=n)
-            x = flight_distance_sample_100.mean()
-            s = flight_distance_sample_100.std()
-            sem = st.sem(flight_distance_sample_20)
+            flight_distance_sample = flight_distance.sample(n=n)
+            x = flight_distance_sample.mean()
+            s = flight_distance_sample.std()
+            sem = st.sem(flight_distance_sample)
             alpha = 0.05
 
 
@@ -68,9 +69,9 @@ def layout():
         """
                      ),
 
-        html.Li(html.H3(f"Confidence interval large sample: {interval_large_sample}")),
+        html.Li(html.H3(f"Confidence interval large sample: {(1034.353, 1446.966)}")),
         html.Li(html.H3(
-            'We are 95% confident that the average flight distance is between 820.6 and 1611.73 kilometers.'
+            'We are 95% confident that the average flight distance is between 1034.353 and 1446.966 kilometers.'
         ))
 
     ])

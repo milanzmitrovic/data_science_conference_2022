@@ -40,59 +40,60 @@ def layout():
 
         html.H1('Measures of Central Tendency and Dispersion'),
 
+        dmc.Space(h=40),
+
         html.H2('Measures of Central Tendency'),
         html.Li(html.H3('Mean')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+
+        html.Img(src='https://www.onlinemathlearning.com/image-files/population-mean.png'),
+
         html.Li(html.H3('Median')),
         html.Li(html.H3('Mode')),
-        html.Li(html.H3('Primer sutra ti saljem')),
+
+        dcc.Markdown(
+            """
+            ```
+                Series 1:  2, 5, 7, 9, 8, 6, 11
+                Series 2:  5, 7, 8, 7, 9, 10, 15
+                Series 3:  8, 7, 10, 10, 8, 12, 6
+                
+            ```
+            
+            """
+        ),
+
+        dmc.Space(h=40),
 
         html.H2('Measures of Dispersion'),
         html.Li(html.H3('Why do we calculate measures of dispersion?')),
         html.Li(html.H3('Variance')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+        html.Img(src='assets/variance.png', style={'height': '400px', 'width': '600px'}),
         html.Li(html.H3('Standard deviation')),
-        html.Li(html.H3('Kodovi')),
-        html.Li(html.H3('Rezultati')),
-        html.Li(html.H3('Interpretacija sutra ti saljem')),
 
-        html.H1('Part II - Measures of Central Tendency and Dispersion'),
-
-        html.H2('Measures of Central Tendency'),
-        html.Li(html.H3('Mean')),
-        html.Li(html.H3('Formula sutra ti saljem')),
-        html.Li(html.H3('Median')),
-        html.Li(html.H3('Mode')),
-        html.Li(html.H3('Primer sutra ti saljem')),
-
-        html.H2('Measures of Dispersion'),
-        html.Li(html.H3('Why do we calculate measures of dispersion?')),
-        html.Li(html.H3('Variance')),
-        html.Li(html.H3('Formula sutra ti saljem')),
-        html.Li(html.H3('Standard deviation')),
+        dmc.Space(h=40),
 
         dcc.Markdown("""
 
-        ```python
-
-        import pandas as pd
-
-        df = pd.read_csv('path_to_csv_file')
-
-        numerical_columns = [field.default for field in fields(Columns.NumericalVariables)]
-
-        numerical_columns.remove('ID')
-
-        dff = df[numerical_columns]
-
-        dff_ = dff.agg(func=['mean', 'std', 'median'])
-
-        ```
+            ```python
+    
+                import pandas as pd
+        
+                df = pd.read_csv('path_to_csv_file')
+        
+                numerical_columns = [field.default for field in fields(Columns.NumericalVariables)]
+        
+                numerical_columns.remove('ID')
+        
+                dff = df[numerical_columns]
+        
+                dff_ = dff.agg(func=['mean', 'std', 'median'])
+    
+            ```
             """),
 
-        create_sample_data_table(df_=dff_),
+        dmc.Space(h=40),
 
-        html.Li(html.H3('Interpretacija sutra ti saljem')),
+        create_sample_data_table(df_=dff_),
 
         dmc.Space(h=40),
 

@@ -16,12 +16,20 @@ pio.renderers.default = 'browser'
 
 def create_sample_data_table(df_: pd.DataFrame):
 
-    return dmc.Container(
+    return dmc.Container([
         dash_table.DataTable(
             data=df_.sample(n=100).to_dict('records'),
             columns=[{"name": i, "id": i} for i in df.columns],
             page_size=30
         ),
+
+        html.H4([
+            'Link to dataset: https://www.mavenanalytics.io/data-playground?search=passen',
+            html.A(href='https://www.mavenanalytics.io/data-playground?search=passen')
+        ]),
+
+
+    ],
         style={'overflow-x': 'auto'}
     )
 

@@ -10,6 +10,9 @@ def layout():
     return dmc.Container([
 
         html.H2('Hypothesis Testing'),
+
+        dmc.Space(h=5),
+
         html.Li(html.H3('Why do we perform a test of hypothesis? ')),
         html.Li(html.H3('Null hypothesis')),
         html.Li(html.H3('Alternative hypothesis')),

@@ -41,12 +41,13 @@ def layout():
 
         html.H1('Inferential Statistics: Interval Estimation and Hypothesis Testing '),
 
+        dmc.Space(h=10),
+
         html.H2('Interval Estimation'),
         html.Li(html.H3('Why do we conduct interval estimation?')),
         html.Li(html.H3('Point estimate ')),
         html.Li(html.H3('Interval estimate')),
-        html.Li(html.H3('Confidence level')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+        html.Li(html.H3('Confidence level - (Point estimate +/- Margin of error)')),
 
         ])
 

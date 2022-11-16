@@ -14,6 +14,8 @@ def layout():
 
         html.H2('Width of a confidence interval'),
 
+        dmc.Space(h=20),
+
         dcc.Input(
             id='level_of_confidence',
             value=0.95,

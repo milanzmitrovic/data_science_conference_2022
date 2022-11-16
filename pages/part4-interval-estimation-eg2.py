@@ -28,7 +28,8 @@ def layout():
         html.H2('Interval Estimation Example 2.'),
         html.Li
         (html.H3('Construct a 95% confidence interval for the proportion of passengers who used business class.')),
-        html.Li(html.H3('Formula sutra ti saljem')),
+
+        html.Img(src='assets/ie2.png', style={'height': '450px', 'width': '800px'}),
 
         dcc.Markdown("""
 
@@ -58,11 +59,12 @@ def layout():
         """
                      ),
 
-        html.Li(html.H3(f"{proportion_confidence_interval}")),
+        html.Li(html.H3(f"Results: {(0.5565, 0.7434)}")),
         html.Li(html.H3(
-            'We are 95% confident that the proportion of passengers who used business class is between 0.632 and 0.808.'
+            'We are 95% confident that the proportion of passengers who used business class is between 0.5565 and 0.7434.'
         )),
 
+        dmc.Space(h=60)
     ])
 
 
